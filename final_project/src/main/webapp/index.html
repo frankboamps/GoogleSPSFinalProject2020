@@ -12,6 +12,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfZsNNljFVCUke2yKYyLLfPMWXDE3A-wI"></script>
     <script src="script.js"></script>
   </head>
+  <!-- onload="currentSlide(1)"  -->
   <body onload="currentSlide(1)">
     <div class="main">
     <h1>FAMA Charity</h1>
@@ -174,12 +175,38 @@
 })();
 </script>
 
-
+   
 
 
 <script src="https://donorbox.org/widget.js" paypalExpress="false"></script><iframe allowpaymentrequest="" frameborder="0" height="900px" name="donorbox" scrolling="no" seamless="seamless" src="https://donorbox.org/embed/for-yemen?default_interval=o&show_content=true" style="max-width: 100%; min-width: 100%; max-height:none!important" width="100%"></iframe>
-  
+   <h3>
+        Comments & Contact
+        <hr>
+        </h3>
+    <ul id="translate-comment-container"></ul>
+      
+     <form action="/translate" method="Post">
+    <select name="languageCode" >
+       <option value="en">English</option>
+      <option  value="zh">Chinese</option>
+      <option  value="es">Spanish</option>
+      <option  value="hi">Hindi</option>
+      <option  value="ar">Arabic</option>
+     </select>
     
+    <button onclick="printComment()"> Translate</button>
+        </form>
+      <h3>Leave a comment</h3>
+      <div id="submitingComment">
+        <form action="/dataComment" method="POST">
+          <label>Name</label>
+          <input type="text" name="name"  placeholder="Your name.." required>
+          <label>Comment</label>
+          <input type="text"  name="message"  placeholder="Your comment.." required>
+          
+         
+           <input type="submit" value="Comment">
+        </form>
 
 
     

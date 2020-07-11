@@ -1,5 +1,5 @@
-package com.servlets;
-
+// package com.servlets;
+package com.google.sps.servlets;
 import com.google.appengine.api.blobstore.BlobstoreService;
 import com.google.appengine.api.blobstore.BlobstoreServiceFactory;
 import java.io.IOException;

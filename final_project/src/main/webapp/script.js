@@ -20,6 +20,7 @@ fetch('/translate').then(response => response.json()).then((comments) => {
     })
   });
    createMap();
+
 }
 
 /** Creates an element that represents a comment */
@@ -141,6 +142,7 @@ function plusSlides(n) {
 
 function currentSlide(n) {
   showSlides(slideIndex = n);
+  printComment();
 }
 
 function showSlides(n) {
