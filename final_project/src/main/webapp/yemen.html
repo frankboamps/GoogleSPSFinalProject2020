@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <title>Donate For Yemen</title>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3pro.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfZsNNljFVCUke2yKYyLLfPMWXDE3A-wI"></script>
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <div class="main">
+    <h1>Yemeni children face deadly hunger and aid shortages as COVID-19 pandemic spreads</h1>
+    <a href="/index.html" class="previous">&laquo; Previous</a>
+    <hr>
+    <h2><strong> The World’s Worst Humanitarian Crisis</strong></h2>
+    <div id="aboutMe">
+      <h3>
+        
+        <hr>
+      </h3>
+      <div class="container">
+        <img id="img" src="./images/yemen.jpg"  style="width:100%;">
+        <hr>
+      </div>
+      <strong>
+        <p>Called the “world’s worst humanitarian crisis,” in Yemen, more than 20 million people are at risk for famine, and aid agencies are desperately funneling as much aid as possible to at-risk families.<br>
+        While one of the Earth’s oldest inhabited areas, Yemen is also one of the Arab world’s poorest and least developed countries. Child malnutrition rates are among the world’s highest: around half of all Yemeni children under 5 years old are stunted.<br>
+        And now, with the spread of coronavirus (COVID-19), hospital and health facilities across the country are scrambling to find medical supplies to help those infected and to stop the others from contracting it. Yemen is all too familiar with the spread of rampant disease: Cholera gripped families across Yemen for years, and it still does.<br>
+        The situation across Yemen is dire, but we envision a better world for our sisters and brothers in need, and together with you, we can make that vision a reality.</p>
+      </strong>
+    </div>
+   
+        
+    <!-- Load Stripe.js on your website. -->
+<script src="https://js.stripe.com/v3"></script>
+
+<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+<button
+  style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+  id="checkout-button-price_1H338pIbPFhNJiaOkAdj4KYl"
+  role="link"
+  type="button"
+>
+  Donate $10
+</button>
+
+<div id="error-message"></div>
+
+<script>
+(function() {
+  var stripe = Stripe('pk_test_51H2RkpIbPFhNJiaOeYEsS3j3MkYixJ2ROT3oev3nha8nG0BuHKXTnhOtftCepnfRIPcKfVAmDWeyJ9E2NYgTKvKJ00KxKeW1PO');
+
+  var checkoutButton = document.getElementById('checkout-button-price_1H338pIbPFhNJiaOkAdj4KYl');
+  checkoutButton.addEventListener('click', function () {
+    // When the customer clicks on the button, redirect
+    // them to Checkout.
+    stripe.redirectToCheckout({
+      lineItems: [{price: 'price_1H338pIbPFhNJiaOkAdj4KYl', quantity: 1}],
+      mode: 'payment',
+      // Do not rely on the redirect to the successUrl for fulfilling
+      // purchases, customers may not always reach the success_url after
+      // a successful payment.
+      // Instead use one of the strategies described in
+      // https://stripe.com/docs/payments/checkout/fulfillment
+      successUrl: 'https://mnagi-sps-summer20.uc.r.appspot.com',
+      cancelUrl: 'https://your-website.com/canceled',
+    })
+    .then(function (result) {
+      if (result.error) {
+        // If `redirectToCheckout` fails due to a browser or network
+        // error, display the localized error message to your customer.
+        var displayError = document.getElementById('error-message');
+        displayError.textContent = result.error.message;
+      }
+    });
+  });
+})();
+</script>
+<script src="https://donorbox.org/widget.js" paypalExpress="false"></script><iframe allowpaymentrequest="" frameborder="0" height="900px" name="donorbox" scrolling="no" seamless="seamless" src="https://donorbox.org/embed/for-yemen?default_interval=o&show_content=true" style="max-width: 100%; min-width: 100%; max-height:none!important" width="100%"></iframe>
+     </form>
+
+      <footer class="footer-distributed">
+        <div class="footer-right">
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+        </div>
+        <div class="footer-left">
+          <p class="footer-links">
+            <a href="#">FAMA</a>
+            <a href="#ourCauses"> Our Causess</a>
+            <!-- <a href="#favorite">Favorites</a> -->
+            <a href="#contact">Contact</a>
+          </p>
+          <p>FAMA Charity &copy; 2020</p>
+        </div>
+      </footer>
+
+  </body>
+</html>
