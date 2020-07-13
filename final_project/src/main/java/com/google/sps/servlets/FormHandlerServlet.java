@@ -40,7 +40,7 @@ public class FormHandlerServlet extends HttpServlet {
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     response.setContentType("application/json");
-    Query query = new Query("Cause").addSort("timestamp", SortDirection.DESCENDING);
+    Query query = new Query("newCause").addSort("timestamp", SortDirection.DESCENDING);
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     PreparedQuery results = datastore.prepare(query);
     System.out.println(results);
@@ -65,8 +65,7 @@ public class FormHandlerServlet extends HttpServlet {
     String title = request.getParameter("title");
     String description = request.getParameter("description");
     String imageUrl = getUploadedFileUrl(request, "image");
-
-    Entity causeEntity = new Entity("Cause");
+    Entity causeEntity = new Entity("newCause");
     causeEntity.setProperty("title", title);
     causeEntity.setProperty("description", description);
     causeEntity.setProperty("image", imageUrl);

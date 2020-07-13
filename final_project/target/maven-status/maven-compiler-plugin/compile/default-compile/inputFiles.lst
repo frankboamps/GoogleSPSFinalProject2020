@@ -1,4 +1,7 @@
-/home/fboampong/GoogleSPSFinalProject2020/final_project/src/main/java/com/google/sps/servlets/DataServlet.java
-/home/fboampong/GoogleSPSFinalProject2020/final_project/src/main/java/com/google/sps/data/Cause.java
-/home/fboampong/GoogleSPSFinalProject2020/final_project/src/main/java/com/google/sps/servlets/FormHandlerServlet.java
-/home/fboampong/GoogleSPSFinalProject2020/final_project/src/main/java/com/google/sps/servlets/BlobStoreUploadUrlServlet.java
+/home/mnagi/GoogleSPSFinalProject2020/final_project/src/main/java/com/google/sps/servlets/DonateComment.java
+/home/mnagi/GoogleSPSFinalProject2020/final_project/src/main/java/com/google/sps/servlets/DataServlet.java
+/home/mnagi/GoogleSPSFinalProject2020/final_project/src/main/java/com/google/sps/servlets/TranslationServlet.java
+/home/mnagi/GoogleSPSFinalProject2020/final_project/src/main/java/com/google/sps/servlets/BlobStoreUploadUrlServlet.java
+/home/mnagi/GoogleSPSFinalProject2020/final_project/src/main/java/com/google/sps/data/Comment.java
+/home/mnagi/GoogleSPSFinalProject2020/final_project/src/main/java/com/google/sps/data/Cause.java
+/home/mnagi/GoogleSPSFinalProject2020/final_project/src/main/java/com/google/sps/servlets/FormHandlerServlet.java
