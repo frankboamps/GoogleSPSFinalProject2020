@@ -13,24 +13,11 @@
     <script src="script.js"></script>
   </head>
   <!-- onload="printComment()" -->
-  <body>
    <body onload="fetchBlobstoreUrlAndShowForm()">
       <a href="/index.html" class="previous">&laquo; Previous</a>
       <br>
-  <form id="my-form" class="hidden" method="POST" enctype="multipart/form-data">
-    <h1>Add a new Donation</h1>
-    <p>Fill this to create your own donation:</p>
-    <p>Title of Cause/donation:</p>
-    <input maxlength="500" type="text" name="title" >
-    <br>
-    <p>Add description or details of Cause/Donation:</p>
-      <textarea maxlength="500" name="description"></textarea>
-      <br/>
-      <p>Upload an image:</p>
-      <input type="file" name="image">
-      <br/><br/>
-      <button>Submit</button>
-    </form>
+      <div id="cause-container">
+        </div>
   </body>
      <br/><br/>
       <footer class="footer-distributed">
