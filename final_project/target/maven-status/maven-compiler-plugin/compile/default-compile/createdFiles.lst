@@ -1,1 +1,7 @@
+com/google/sps/data/Comment.class
+com/google/sps/servlets/FormHandlerServlet.class
+com/google/sps/servlets/TranslationServlet.class
+com/google/sps/servlets/DonateComment.class
+com/google/sps/data/Cause.class
 com/google/sps/servlets/DataServlet.class
+com/google/sps/servlets/BlobStoreUploadUrlServlet.class

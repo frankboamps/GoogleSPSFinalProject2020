@@ -141,6 +141,8 @@ function plusSlides(n) {
 
 function currentSlide(n) {
   showSlides(slideIndex = n);
+  getCauses();
+  printComment();
 }
 
 function showSlides(n) {
@@ -160,14 +162,97 @@ function showSlides(n) {
 }
 
 function fetchBlobstoreUrlAndShowForm() {
-  fetch('/blobstore-upload-url')
-      .then((response) => {
-        return response.text();
-      })
-      .then((imageUploadUrl) => {
-        const messageForm = document.getElementById('my-form');
-        messageForm.action = imageUploadUrl;
-        messageForm.classList.remove('hidden');
-      });
+    fetch('/blobstore-upload-url').then(response => response.text()).then((quote) => {
+     document.getElementById('cause-container').innerHTML = quote;
+  });
 }
-    
+
+function getCauses(){
+    fetch('/my-form-handler').then(response => response.json()).then(causes => {
+    const causeListElement = document.getElementById('post-container-column');
+    causeListElement.innerHTML = '';
+    console.log(causes);
+    for (var i = 0; i < causes.length; i++){
+        var obj = causes[i];
+        causeListElement.appendChild(createPostUnit(obj));
+    }
+  });
+}
+
+function createPostUnit(obj){
+    const divElement = document.createElement('div');
+    divElement.innerHTML = '';
+    divElement.appendChild(createImageTag(obj.imageUrl));
+    divElement.appendChild(createBigTextElement(obj.title));
+    divElement.appendChild(createParagraphElement(obj.description));
+    return divElement;
+}
+
+/** Creates an <li> element containing text. */
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
+}
+
+/** Creates an <p> element containing text. */
+function createParagraphElement(text) {
+  const pElement = document.createElement('p');
+  pElement.innerText = text;
+  return pElement;
+}
+
+function createBigTextElement(text) {
+  const hElement = document.createElement('h2');
+  hElement.innerText = text;
+  return hElement;
+}
+
+function createImageTag(text){
+  var imgElement = document.createElement('img');
+  imgElement.id = "post-img";
+  imgElement.src = text;
+  return imgElement;
+}
+
+
+// //React
+
+// import * as React from 'react';   
+
+// // export default class Entry extends React.Component {
+// // constructor(props) {
+// //     super(props);
+// //   this.buttonHandler = new ButtonHandler();
+// // }
+
+// // render() {
+// //     return (
+// //         <div>
+// //             <title>Button example</title>
+// //             <button onclick={this.buttonHandler.writeToConsole}>Button</button>
+// //         </div>
+
+// //     )
+// //   }
+// // }
+
+// class TypesOfFood extends React.Component {
+//   constructor(props) {
+//     super(props);
+//   }
+//   render() {
+//     return (
+//       <div>
+//         <h1>Types of Food:</h1>
+//         {/* change code below this line */}
+//         <Fruits />
+//         <Vegetables />
+//         {/* change code above this line */}
+//       </div>
+//     );
+//   }
+// };
+
+// // change code below this line
+// ReactDOM.render(<TypesOfFood />, document.getElementById('challenge-node'))

@@ -77,23 +77,58 @@
     </div>
     <div id="ourCauses" >
       <h3>
-        Our Causess:
+        Our Causes:
         <hr>
       </h3>
-      <div class="row">
+
+    <div class="row">
+        <!-- <div id= "posts-container"> -->
+            
+             <div  class="column">
+                  <div id = "post-container-column" class="content">
+                  </div>
+             </div>
+          <!-- </div> -->
+        </div>
+
+      <!-- <div class="row">
         <div class="column">
           <div class="content">
           </div>
-        </div>
-      <div class="row">
+        </div> -->
+
+
+      <!-- <div class="row">
         <div class="column">
+          <div class="content">
+            <a href="/yemen.html">
+            <img id="img" src="./images/yemen.jpg" style="width: 100%; height: 100%;"></a>
+            <h3 id="title"> </h3>
+            <p id="discription" ></p>
+          </div>
+        </div> -->
+        <!-- <div class="column">
           <div class="content">
             <a href="/yemen.html">
             <img id="img" src="./images/yemen.jpg" style="width: 100%; height: 100%;"></a>
             <h3> The World’s Worst Humanitarian Crisis</h3>
             <p>Called the “world’s worst humanitarian crisis,” in Yemen, more than 20 million people are at risk for famine, and aid agencies are desperately funneling as much aid as possible to at-risk families.</p>
+          </div> -->
+       <!-- </div>
+
+
+
+        <div class="column">
+          <div class="content">
+            <a href="/yemen.html">
+            <img id="img" src="./images/yemen.jpg" id="img" style="width: 100%; height: 100%;"></a>
+            <h3 id="title"> </h3>
+            <p id="discription">Called the “world’s worst humanitarian crisis,” in Yemen, more than 20 million people are at risk for famine, and aid agencies are desperately funneling as much aid as possible to at-risk families.</p>
           </div>
         </div>
+
+
+
        <div class="column">
           <div class="content">
             <a href="/yemen.html">
@@ -119,6 +154,7 @@
           </div>
         </div>
       </div>
+      -->
     </div>
 
 
@@ -181,7 +217,34 @@
   
     
 
-
+<h3>
+        Comments & Contact
+        <hr>
+        </h3>
+    <ul id="translate-comment-container"></ul>
+      
+     <form action="/translate" method="Post">
+    <select name="languageCode" >
+       <option value="en">English</option>
+      <option  value="zh">Chinese</option>
+      <option  value="es">Spanish</option>
+      <option  value="hi">Hindi</option>
+      <option  value="ar">Arabic</option>
+     </select>
+    
+    <button onclick="printComment()"> Translate</button>
+        </form>
+      <h3>Leave a comment</h3>
+      <div id="submitingComment">
+        <form action="/dataComment" method="POST">
+          <label>Name</label>
+          <input type="text" name="name"  placeholder="Your name.." required>
+          <label>Comment</label>
+          <input type="text"  name="message"  placeholder="Your comment.." required>
+          
+         
+           <input type="submit" value="Comment">
+        </form>
     
       <footer class="footer-distributed">
         <div class="footer-right">

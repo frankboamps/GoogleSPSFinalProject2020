@@ -391,3 +391,8 @@ a:hover {
   background-color: #ddd;
   color: black;
 }
+
+#post-img{
+    width: 100%;
+    height: 100%;
+}
