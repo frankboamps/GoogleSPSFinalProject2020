@@ -65,7 +65,6 @@ public class FormHandlerServlet extends HttpServlet {
     String title = request.getParameter("title");
     String description = request.getParameter("description");
     String imageUrl = getUploadedFileUrl(request, "image");
-
     Entity causeEntity = new Entity("newCause");
     causeEntity.setProperty("title", title);
     causeEntity.setProperty("description", description);
