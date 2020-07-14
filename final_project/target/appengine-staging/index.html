@@ -17,6 +17,17 @@
     <h1>FAMA Charity</h1>
    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
     <hr>
+       <form action="/translatePage" method="Post">
+    <select name="languageCode" >
+       <option value="en">English</option>
+      <option  value="zh">Chinese</option>
+      <option  value="es">Spanish</option>
+      <option  value="hi">Hindi</option>
+      <option  value="ar">Arabic</option>
+     </select>
+    
+    <button onclick="getCauses()"> Translate</button>
+        </form>
     <!-- sidenav -->
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -81,14 +92,11 @@
         <hr>
       </h3>
 
-    <div class="row">
-        <!-- <div id= "posts-container"> -->
-            
-             <div  class="column">
-                  <div id = "post-container-column" class="content">
-                  </div>
+        <div id= "posts-container">
+            <div class="row">
+             <div id = "post-container-column" class="column">
              </div>
-          <!-- </div> -->
+          </div>
         </div>
 
       <!-- <div class="row">

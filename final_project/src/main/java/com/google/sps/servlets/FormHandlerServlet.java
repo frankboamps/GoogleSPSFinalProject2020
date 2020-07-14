@@ -29,6 +29,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import com.google.sps.servlets.PageTranslation;
 
 @WebServlet("/my-form-handler")
 public class FormHandlerServlet extends HttpServlet {
@@ -37,26 +38,6 @@ public class FormHandlerServlet extends HttpServlet {
   public void init() {
   }
 
-  @Override
-  public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    response.setContentType("application/json");
-    Query query = new Query("newCause").addSort("timestamp", SortDirection.DESCENDING);
-    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
-    PreparedQuery results = datastore.prepare(query);
-    System.out.println(results);
-    List<Cause> causes = new ArrayList<>();
-    for (Entity entity : results.asIterable()) {
-      long id = entity.getKey().getId();
-      String title = (String) entity.getProperty("title");
-      String description = (String) entity.getProperty("description");
-      String imageUrl = (String) entity.getProperty("image");
-      Cause tempCause = new Cause(title, description, imageUrl);
-      causes.add(tempCause);
-    }
-    Gson gson = new Gson();
-    String json = new Gson().toJson(causes);
-    response.getWriter().println(json);
-  }
 
    @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -65,7 +46,8 @@ public class FormHandlerServlet extends HttpServlet {
     String title = request.getParameter("title");
     String description = request.getParameter("description");
     String imageUrl = getUploadedFileUrl(request, "image");
-    Entity causeEntity = new Entity("newCause");
+
+    Entity causeEntity = new Entity("newCauseDonate");
     causeEntity.setProperty("title", title);
     causeEntity.setProperty("description", description);
     causeEntity.setProperty("image", imageUrl);
