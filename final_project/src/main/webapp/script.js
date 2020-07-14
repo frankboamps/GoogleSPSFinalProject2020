@@ -168,7 +168,7 @@ function fetchBlobstoreUrlAndShowForm() {
 }
 
 function getCauses(){
-    fetch('/my-form-handler').then(response => response.json()).then(causes => {
+    fetch('/translatePage').then(response => response.json()).then(causes => {
     const causeListElement = document.getElementById('post-container-column');
     causeListElement.innerHTML = '';
     console.log(causes);
