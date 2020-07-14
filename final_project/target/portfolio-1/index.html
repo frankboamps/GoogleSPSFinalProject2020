@@ -12,7 +12,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfZsNNljFVCUke2yKYyLLfPMWXDE3A-wI"></script>
     <script src="script.js"></script>
   </head>
-  <body onload="currentSlide(1)">
+  <body onload="getCauses()">
     <div class="main">
     <h1>FAMA Charity</h1>
    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
@@ -35,7 +35,6 @@
       <a href="#aboutUs">About Us</a>
       <a href="#ourCauses">Our Causes</a>
       <a href="#donate">Donate</a>
-      <a href="/yemen.html">Yemen</a>
       <a href="/newdonation.html">New Donation</a>
       <a href="#contact">Contact</a>
       
@@ -46,7 +45,7 @@
         About Us
         <hr>
       </h3>
-      <div class="slideshow-container">
+<div class="slideshow-container">
 
 <div class="mySlides fade">
   <div class="numbertext">1 / 3</div>
@@ -56,26 +55,23 @@
 
 <div class="mySlides fade">
   <div class="numbertext">2 / 3</div>
-  <img src="./images/yemen.jpg" style="width:100%">
-  <div class="text">Yemeni children face deadly hunger and aid shortages as COVID-19 pandemic spreads</div>
+  <img src="./images/homelessness.jpg" style="width:100%">
+  <div class="text">Lives on the street and sometimes struggles to hold a cup or bottle of water.</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">3 / 3</div>
-  <img src="./images/yemen.jpg" style="width:100%">
-  <div class="text">Yemeni children face deadly hunger and aid shortages as COVID-19 pandemic spreads</div>
+  <img src="./images/education.jpg" style="width:100%">
+  <div class="text">Around 264 million children and adolescents are not in school.</div>
 </div>
-
-<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-<a class="next" onclick="plusSlides(1)">&#10095;</a>
 
 </div>
 <br>
 
 <div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span> 
-  <span class="dot" onclick="currentSlide(2)"></span> 
-  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
 </div>
 
       <div class="container">
@@ -221,8 +217,7 @@
 
 
 
-<script src="https://donorbox.org/widget.js" paypalExpress="false"></script><iframe allowpaymentrequest="" frameborder="0" height="900px" name="donorbox" scrolling="no" seamless="seamless" src="https://donorbox.org/embed/for-yemen?default_interval=o&show_content=true" style="max-width: 100%; min-width: 100%; max-height:none!important" width="100%"></iframe>
-  
+<script src="https://donorbox.org/widget.js" paypalExpress="false"></script><iframe allowpaymentrequest="" frameborder="0" height="900px" name="donorbox" scrolling="no" seamless="seamless" src="https://donorbox.org/embed/donatetofama" style="max-width: 500px; min-width: 250px; max-height:none!important" width="100%"></iframe>  
     
 
 <h3>
@@ -256,13 +251,13 @@
     
       <footer class="footer-distributed">
         <div class="footer-right">
-          <a href="/yemen.html"><i class="fa fa-facebook"></i></a>
-          <a href="/yemen.html"><i class="fa fa-instagram"></i></a>
-          <a href="/yemen.html"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
         </div>
         <div class="footer-left">
           <p class="footer-links">
-            <a href="/yemen.html">FAMA</a>
+            <a href="#">FAMA</a>
             <a href="#ourCauses"> Our Causess</a>
             <!-- <a href="#favorite">Favorites</a> -->
             <a href="#contact">Contact</a>
