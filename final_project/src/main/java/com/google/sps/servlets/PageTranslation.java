@@ -63,7 +63,7 @@ public class PageTranslation extends HttpServlet {
     @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     response.setContentType("application/json");
-    Query query = new Query("newCauseDonate").addSort("timestamp", SortDirection.DESCENDING);
+    Query query = new Query("newCauseDon").addSort("timestamp", SortDirection.DESCENDING);
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     PreparedQuery results = datastore.prepare(query);
     System.out.println(results);

@@ -29,10 +29,10 @@ public class BlobStoreUploadUrlServlet extends HttpServlet {
       out.println("<h2>Add a new Donation</h2>");
       out.println("<h3>Fill this to create your own donation:</h3>");
       out.println("<form method=\"POST\" enctype=\"multipart/form-data\" action=\"" + uploadUrl + "\" id=\"usrform\">");
-      out.println("Title of Cause: <input type=\"text\" name=\"title\" form=\"usrform\">");
-      out.println("Description: <textarea rows=\"0\" cols=\"100\" name=\"description\" form=\"usrform\"> </textarea>");
+      out.println("Title of Cause: <input type=\"text\" name=\"title\" form=\"usrform\" required>");
+      out.println("Description: <textarea rows=\"0\" cols=\"100\" name=\"description\" minlength=\"50\" maxlength=\"250\" form=\"usrform\" > </textarea>");
       out.println("<br/>");
-      out.println("Upload an image for cause: <input type=\"file\" name=\"image\" form=\"usrform\">");
+      out.println("Upload an image for cause: <input type=\"file\" name=\"image\" form=\"usrform\" required>");
       out.println("<br/> <input type=\"submit\">");
       out.println("</form>");
     }

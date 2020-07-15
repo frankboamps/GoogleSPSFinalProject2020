@@ -5,7 +5,7 @@ function openNav() {
   function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
   }
-  function myFunction() {
+  function myFunction() { 
    var element = document.body;
    element.classList.toggle("dark-mode");
 }
@@ -175,6 +175,7 @@ function getCauses(){
 
 function createPostUnit(obj){
     const divElement = document.createElement('div');
+    divElement.className= "column";
     divElement.innerHTML = '';
     divElement.appendChild(createImageTag(obj.imageUrl));
     divElement.appendChild(createBigTextElement(obj.title));
@@ -183,6 +184,13 @@ function createPostUnit(obj){
 }
 
 /** Creates an <li> element containing text. */
+// function createDivElement(text) {
+//   const dvElement = document.createElement('div');
+//   dvElement.className= "column";
+//   dvElement.innerText = text;
+//   return dvElement;
+// }
+
 function createListElement(text) {
   const liElement = document.createElement('li');
   liElement.innerText = text;
@@ -192,6 +200,7 @@ function createListElement(text) {
 /** Creates an <p> element containing text. */
 function createParagraphElement(text) {
   const pElement = document.createElement('p');
+  pElement.id = "paragraphBorder";
   pElement.innerText = text;
   return pElement;
 }
@@ -204,7 +213,7 @@ function createBigTextElement(text) {
 
 function createImageTag(text){
   var imgElement = document.createElement('img');
-  imgElement.id = "post-img";
+  imgElement.id = "img";
   imgElement.src = text;
   return imgElement;
 }
