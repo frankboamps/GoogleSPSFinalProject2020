@@ -81,7 +81,7 @@ function createPostUnit(obj){
     const divElement = document.createElement('div');
     divElement.className= "column";
     divElement.innerHTML = '';
-    divElement.appendChild(createImageTag(obj.imageUrl));
+    divElement.appendChild(addATagToElement(obj.id, obj.imageUrl));
     divElement.appendChild(createBigTextElement(obj.title));
     divElement.appendChild(createParagraphElement(obj.description));
     return divElement;
@@ -113,3 +113,28 @@ function createImageTag(text){
   imgElement.src = text;
   return imgElement;
 }
+
+function addATagToElement(id, text){
+    var aElement = document.createElement('a');
+    aElement.innerHTML = "<img id = 'img' src='"+text+"' alt='demo'/>"
+    var url  = "/details.html?" + "id=" +id; 
+    aElement.href = url   
+    return aElement;
+}
+
+//trying this
+ function detailsOnlode () {
+    var url = document.location.href,
+        params = url.split('?')[1].split('&'),
+        data = {}, tmp;
+    for (var i = 0, l = params.length; i < l; i++) {
+         tmp = params[i].split('=');
+         data[tmp[0]] = tmp[1];
+    }
+    var id = data.id;
+
+  fetch('/details-data?id=' +id).then(response => response.text()).then((quote) => {
+     document.getElementById('container').innerHTML = quote;
+  });
+}
+

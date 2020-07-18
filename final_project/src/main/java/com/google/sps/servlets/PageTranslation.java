@@ -69,7 +69,7 @@ public class PageTranslation extends HttpServlet {
         translate.translate(description, Translate.TranslateOption.targetLanguage(lang));
       String translatedDescription = translationDescription.getTranslatedText();
 
-      Cause tempCause = new Cause(translatedtitle, translatedDescription, imageUrl);
+      Cause tempCause = new Cause(id, translatedtitle, translatedDescription, imageUrl);
       causes.add(tempCause);
     }
     Gson gson = new Gson();
