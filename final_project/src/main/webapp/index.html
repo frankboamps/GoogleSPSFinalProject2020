@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <title>FAMA</title>
+  <title>FAMA</title>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,186 +12,122 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfZsNNljFVCUke2yKYyLLfPMWXDE3A-wI"></script>
     <script src="script.js"></script>
   </head>
-  <body onload="currentSlide(1)">
+  <body onload="getCauses()">
     <div class="main">
     <h1>FAMA Charity</h1>
-   <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
     <hr>
+    <form action="/translatePage" method="Post">
+      <select name="languageCode" >
+        <option value="en">English</option>
+        <option  value="zh">Chinese</option>
+        <option  value="es">Spanish</option>
+        <option  value="hi">Hindi</option>
+        <option  value="ar">Arabic</option>
+      </select>
+      <button onclick="getCauses()"> Translate Page</button>
+    </form>
     <!-- sidenav -->
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <button  class="buttonDark-mode" onclick="myFunction()">Dark Mode</button>
-      <a href="#aboutUs">About Us</a>
+      <a href="#aboutUs">Our Vision</a>
       <a href="#ourCauses">Our Causes</a>
       <a href="#donate">Donate</a>
-      <a href="/yemen.html">Yemen</a>
       <a href="/newdonation.html">New Donation</a>
       <a href="#contact">Contact</a>
-      
     </div>
     <h2><strong> FAMA</strong></h2>
     <div id="aboutUs">
-      <h3>
+      <!-- <h3>
         About Us
         <hr>
-      </h3>
+      </h3> -->
       <div class="slideshow-container">
-
-<div class="mySlides fade">
-  <div class="numbertext">1 / 3</div>
-  <img src="./images/yemen.jpg" style="width:100%">
-  <div class="text">Yemeni children face deadly hunger and aid shortages as COVID-19 pandemic spreads</div>
-</div>
-
-<div class="mySlides fade">
-  <div class="numbertext">2 / 3</div>
-  <img src="./images/yemen.jpg" style="width:100%">
-  <div class="text">Yemeni children face deadly hunger and aid shortages as COVID-19 pandemic spreads</div>
-</div>
-
-<div class="mySlides fade">
-  <div class="numbertext">3 / 3</div>
-  <img src="./images/yemen.jpg" style="width:100%">
-  <div class="text">Yemeni children face deadly hunger and aid shortages as COVID-19 pandemic spreads</div>
-</div>
-
-<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-<a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-</div>
-<br>
-
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span> 
-  <span class="dot" onclick="currentSlide(2)"></span> 
-  <span class="dot" onclick="currentSlide(3)"></span> 
-</div>
-
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <img src="./images/yemen.jpg" style="width:100%">
+          <div class="text">Yemeni children face deadly hunger and aid shortages as COVID-19 pandemic spreads</div>
+        </div>
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <img src="./images/homelessness.jpg" style="width:100%">
+          <div class="text">Lives on the street and sometimes struggles to hold a cup or bottle of water.</div>
+        </div>
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="./images/education.jpg" style="width:100%">
+          <div class="text">Around 264 million children and adolescents are not in school.</div>
+        </div>
+      </div>
+      <br>
+      <div style="text-align:center">
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+      </div>
       <div class="container">
-      
         <hr>
       </div>
-      <strong>
-        <p>about FAMA ..</p>
-      </strong>
+      <h3>
+        Our Vision
+        <hr>
+      </h3>
+        <p>We imagine a world in which every person has access to a healthy 
+           life and every community has the capacity to make that access a reality.
+           We believe that sustained access to health sets the foundation for individual 
+           and community development. In everything we do, we work to broaden access to healthcare 
+           services and build capacity for health. It’s a lofty vision, but we take a step closer to 
+           it every day through support from people like you. Invest in our efforts to create a 
+           healthier world today.</p>
     </div>
     <div id="ourCauses" >
       <h3>
-        Our Causess:
+        Our Causes
         <hr>
       </h3>
-      <div class="row">
-        <div class="column">
-          <div class="content">
-          </div>
-        </div>
-      <div class="row">
-        <div class="column">
-          <div class="content">
-            <a href="/yemen.html">
-            <img id="img" src="./images/yemen.jpg" style="width: 100%; height: 100%;"></a>
-            <h3> The World’s Worst Humanitarian Crisis</h3>
-            <p>Called the “world’s worst humanitarian crisis,” in Yemen, more than 20 million people are at risk for famine, and aid agencies are desperately funneling as much aid as possible to at-risk families.</p>
-          </div>
-        </div>
-       <div class="column">
-          <div class="content">
-            <a href="/yemen.html">
-            <img id="img" src="./images/yemen.jpg" style="width: 100%; height: 100%;"></a>
-            <h3> The World’s Worst Humanitarian Crisis</h3>
-            <p>Called the “world’s worst humanitarian crisis,” in Yemen, more than 20 million people are at risk for famine, and aid agencies are desperately funneling as much aid as possible to at-risk families.</p>
-          </div>
-        </div>
-       <div class="column">
-          <div class="content">
-            <a href="/yemen.html">
-            <img id="img" src="./images/yemen.jpg" style="width: 100%; height: 100%;"></a>
-            <h3> The World’s Worst Humanitarian Crisis</h3>
-            <p>Called the “world’s worst humanitarian crisis,” in Yemen, more than 20 million people are at risk for famine, and aid agencies are desperately funneling as much aid as possible to at-risk families.</p>
-          </div>
-        </div>
-     <div class="column">
-          <div class="content">
-            <a href="/yemen.html">
-            <img id="img" src="./images/yemen.jpg" style="width: 100%; height: 100%;"></a>
-            <h3> The World’s Worst Humanitarian Crisis</h3>
-            <p>Called the “world’s worst humanitarian crisis,” in Yemen, more than 20 million people are at risk for famine, and aid agencies are desperately funneling as much aid as possible to at-risk families.</p>
-          </div>
-        </div>
+      <div id = "post-container-column" class="row">
       </div>
     </div>
-
-
-
     <div id="donate" >
-        <h3>
-        Donate:
-        <hr>
-      </h3>
-    <!-- Load Stripe.js on your website. -->
-<script src="https://js.stripe.com/v3"></script>
-
-<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
-<button
-  style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
-  id="checkout-button-price_1H338pIbPFhNJiaOkAdj4KYl"
-  role="link"
-  type="button"
->
-  Donate $10
-</button>
-
-<div id="error-message"></div>
-
-<script>
-(function() {
-  var stripe = Stripe('pk_test_51H2RkpIbPFhNJiaOeYEsS3j3MkYixJ2ROT3oev3nha8nG0BuHKXTnhOtftCepnfRIPcKfVAmDWeyJ9E2NYgTKvKJ00KxKeW1PO');
-
-  var checkoutButton = document.getElementById('checkout-button-price_1H338pIbPFhNJiaOkAdj4KYl');
-  checkoutButton.addEventListener('click', function () {
-    // When the customer clicks on the button, redirect
-    // them to Checkout.
-    stripe.redirectToCheckout({
-      lineItems: [{price: 'price_1H338pIbPFhNJiaOkAdj4KYl', quantity: 1}],
-      mode: 'payment',
-      // Do not rely on the redirect to the successUrl for fulfilling
-      // purchases, customers may not always reach the success_url after
-      // a successful payment.
-      // Instead use one of the strategies described in
-      // https://stripe.com/docs/payments/checkout/fulfillment
-      successUrl: 'https://mnagi-sps-summer20.uc.r.appspot.com',
-      cancelUrl: 'https://your-website.com/canceled',
-    })
-    .then(function (result) {
-      if (result.error) {
-        // If `redirectToCheckout` fails due to a browser or network
-        // error, display the localized error message to your customer.
-        var displayError = document.getElementById('error-message');
-        displayError.textContent = result.error.message;
-      }
-    });
-  });
-})();
-</script>
-
-
-
-
-<script src="https://donorbox.org/widget.js" paypalExpress="false"></script><iframe allowpaymentrequest="" frameborder="0" height="900px" name="donorbox" scrolling="no" seamless="seamless" src="https://donorbox.org/embed/for-yemen?default_interval=o&show_content=true" style="max-width: 100%; min-width: 100%; max-height:none!important" width="100%"></iframe>
-  
-    
-
-
-    
+    <h3>
+      Donate
+      <hr>
+    </h3>
+    <script src="https://donorbox.org/widget.js" paypalExpress="false"></script><iframe allowpaymentrequest="" frameborder="0" height="900px" name="donorbox" scrolling="no" seamless="seamless" src="https://donorbox.org/embed/donatetofama" style="max-width: 500px; min-width: 250px; max-height:none!important" width="100%"></iframe>
+    <h3>
+      Comments & Contact
+      <hr>
+    </h3>
+    <ul id="translate-comment-container"></ul>
+    <form action="/translate" method="Post">
+      <select name="languageCode" >
+        <option value="en">English</option>
+        <option  value="zh">Chinese</option>
+        <option  value="es">Spanish</option>
+        <option  value="hi">Hindi</option>
+        <option  value="ar">Arabic</option>
+      </select>
+      <button onclick="printComment()"> Translate Comments</button>
+    </form>
+    <h3>Leave a comment</h3>
+    <div id="submitingComment">
+      <form action="/dataComment" method="POST">
+        <label>Name</label>
+        <input type="text" name="name"  placeholder="Your name.." required>
+        <label>Comment</label>
+        <input type="text"  name="message"  placeholder="Your comment.." required>
+        <input type="submit" value="Comment">
+      </form>
       <footer class="footer-distributed">
         <div class="footer-right">
-          <a href="/yemen.html"><i class="fa fa-facebook"></i></a>
-          <a href="/yemen.html"><i class="fa fa-instagram"></i></a>
-          <a href="/yemen.html"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
         </div>
         <div class="footer-left">
           <p class="footer-links">
-            <a href="/yemen.html">FAMA</a>
+            <a href="#">FAMA</a>
             <a href="#ourCauses"> Our Causess</a>
             <!-- <a href="#favorite">Favorites</a> -->
             <a href="#contact">Contact</a>
