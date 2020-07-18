@@ -2,12 +2,12 @@ function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
   }
   
-  function closeNav() {
+function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
-  }
-  function myFunction() { 
-   var element = document.body;
-   element.classList.toggle("dark-mode");
+}
+function myFunction() { 
+    var element = document.body;
+    element.classList.toggle("dark-mode");
 }
 
 
@@ -87,14 +87,6 @@ function createPostUnit(obj){
     return divElement;
 }
 
-/** Creates an <li> element containing text. */
-// function createDivElement(text) {
-//   const dvElement = document.createElement('div');
-//   dvElement.className= "column";
-//   dvElement.innerText = text;
-//   return dvElement;
-// }
-
 function createListElement(text) {
   const liElement = document.createElement('li');
   liElement.innerText = text;
@@ -121,45 +113,3 @@ function createImageTag(text){
   imgElement.src = text;
   return imgElement;
 }
-
-
-// //React
-
-// import * as React from 'react';   
-
-// // export default class Entry extends React.Component {
-// // constructor(props) {
-// //     super(props);
-// //   this.buttonHandler = new ButtonHandler();
-// // }
-
-// // render() {
-// //     return (
-// //         <div>
-// //             <title>Button example</title>
-// //             <button onclick={this.buttonHandler.writeToConsole}>Button</button>
-// //         </div>
-
-// //     )
-// //   }
-// // }
-
-// class TypesOfFood extends React.Component {
-//   constructor(props) {
-//     super(props);
-//   }
-//   render() {
-//     return (
-//       <div>
-//         <h1>Types of Food:</h1>
-//         {/* change code below this line */}
-//         <Fruits />
-//         <Vegetables />
-//         {/* change code above this line */}
-//       </div>
-//     );
-//   }
-// };
-
-// // change code below this line
-// ReactDOM.render(<TypesOfFood />, document.getElementById('challenge-node'))
