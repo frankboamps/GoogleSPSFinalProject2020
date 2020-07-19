@@ -1,7 +1,3 @@
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
 package com.google.sps.servlets;
 
 import java.io.IOException;
@@ -20,16 +16,17 @@ import com.google.appengine.api.datastore.Query.SortDirection;
 
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
 @WebServlet("/details-data")
-public class DetailsDataServlet extends HttpServlet {
 
-  @Override
+
+public class DetailsDataServlet extends HttpServlet {
+String postId;
+@Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     
     response.setContentType("text/html;");
     PrintWriter out = response.getWriter();
-
-    String postId = request.getParameter("id");
-
+     postId= request.getParameter("id");
+ 
     Cause selectedDetailsCause = null;
 
     Query query = new Query("CauseDon").addSort("timestamp", SortDirection.DESCENDING);
@@ -46,10 +43,29 @@ public class DetailsDataServlet extends HttpServlet {
             selectedDetailsCause = new Cause(id, title, description, imageUrl);
         }
     }
-
-    out.println("<img src= " + selectedDetailsCause.getImageUrl() + ">");
     out.println("<h2>" + selectedDetailsCause.getTitle() + "</h2>");
+    out.println("<img id='imgDetails' src= " + selectedDetailsCause.getImageUrl() + ">");
     out.println("<p>" + selectedDetailsCause.getDescription() + "</p>");
-     
+    out.println("<br>");
+    out.println("<h3> This Donation is going to " + selectedDetailsCause.getTitle() + ":</h3>");
   }
+  
+    // public String update(){
+    //         return postId;
+    //     }
+  @Override
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+    String Usercomment = request.getParameter("message");
+    String name = request.getParameter("name");
+
+    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+    Entity messageEntity = new Entity(postId);
+    messageEntity.setProperty("name", name);
+    messageEntity.setProperty("message", Usercomment);
+    datastore.put(messageEntity);
+
+    response.sendRedirect("/details.html?id="+ postId);
+  }
+
 }

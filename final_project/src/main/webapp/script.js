@@ -12,7 +12,6 @@ function myFunction() {
 
 
 function printComment() {
-
 fetch('/translate').then(response => response.json()).then((comments) => {
     const taskListElement = document.getElementById('translate-comment-container');
     comments.forEach((comment) => {
@@ -28,7 +27,7 @@ function createCommentElement(comment) {
 //   taskElement.id = "liStyle";
 
   const titleElement = document.createElement('span');
-  titleElement.innerText = comment.name + ":" +comment.msg;
+  titleElement.innerText = comment.name + ": " +comment.msg;
   taskElement.appendChild(titleElement);
 
   return taskElement;
@@ -107,7 +106,7 @@ function createBigTextElement(text) {
   return hElement;
 }
 
-function createImageTag(text){
+function createImageTag(text) {
   var imgElement = document.createElement('img');
   imgElement.id = "img";
   imgElement.src = text;
@@ -136,5 +135,5 @@ function addATagToElement(id, text){
   fetch('/details-data?id=' +id).then(response => response.text()).then((quote) => {
      document.getElementById('container').innerHTML = quote;
   });
+  printComment();
 }
-

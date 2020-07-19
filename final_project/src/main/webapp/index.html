@@ -15,9 +15,10 @@
     <h1>FAMA Charity</h1>
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
     <hr>
-    <form action="/translatePage" method="Post">
+    <!-- action="/translatePage" -->
+    <form action="/translatePage"   method="Post">
       <select name="languageCode" >
-        <option value="en">English</option>
+        <option  value="en">English</option>
         <option  value="zh">Chinese</option>
         <option  value="es">Spanish</option>
         <option  value="hi">Hindi</option>
@@ -92,13 +93,12 @@
       Donate
       <hr>
     </h3>
-    <script src="https://donorbox.org/widget.js" paypalExpress="false"></script><iframe allowpaymentrequest="" frameborder="0" height="900px" name="donorbox" scrolling="no" seamless="seamless" src="https://donorbox.org/embed/donatetofama" style="max-width: 500px; min-width: 250px; max-height:none!important" width="100%"></iframe>
     <h3>
       Comments & Contact
       <hr>
     </h3>
     <ul id="translate-comment-container"></ul>
-    <form action="/translate" method="Post">
+    <form  action="/translate" method="Post">
       <select name="languageCode" >
         <option value="en">English</option>
         <option  value="zh">Chinese</option>

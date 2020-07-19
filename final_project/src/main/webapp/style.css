@@ -374,3 +374,7 @@ a:hover {
   height: 200px;
   border: 3px solid rgb(255, 255, 255);
 }
+#imgDetails{
+  border-radius: 30px;
+  width:80%;
+}

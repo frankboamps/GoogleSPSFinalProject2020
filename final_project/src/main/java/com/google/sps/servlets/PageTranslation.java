@@ -42,7 +42,7 @@ public class PageTranslation extends HttpServlet {
     lang = languageCode;
     System.out.println(lang);
     
-    response.sendRedirect("/index.html#donate");
+    response.sendRedirect("/index.html#ourCauses");
   }
 
 
