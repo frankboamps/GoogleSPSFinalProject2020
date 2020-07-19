@@ -2,12 +2,12 @@ function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
   }
   
-  function closeNav() {
+function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
-  }
-  function myFunction() { 
-   var element = document.body;
-   element.classList.toggle("dark-mode");
+}
+function myFunction() { 
+    var element = document.body;
+    element.classList.toggle("dark-mode");
 }
 
 
@@ -81,19 +81,11 @@ function createPostUnit(obj){
     const divElement = document.createElement('div');
     divElement.className= "column";
     divElement.innerHTML = '';
-    divElement.appendChild(createImageTag(obj.imageUrl));
+    divElement.appendChild(addATagToElement(obj.id, obj.imageUrl));
     divElement.appendChild(createBigTextElement(obj.title));
     divElement.appendChild(createParagraphElement(obj.description));
     return divElement;
 }
-
-/** Creates an <li> element containing text. */
-// function createDivElement(text) {
-//   const dvElement = document.createElement('div');
-//   dvElement.className= "column";
-//   dvElement.innerText = text;
-//   return dvElement;
-// }
 
 function createListElement(text) {
   const liElement = document.createElement('li');
@@ -122,44 +114,27 @@ function createImageTag(text){
   return imgElement;
 }
 
+function addATagToElement(id, text){
+    var aElement = document.createElement('a');
+    aElement.innerHTML = "<img id = 'img' src='"+text+"' alt='demo'/>"
+    var url  = "/details.html?" + "id=" +id; 
+    aElement.href = url   
+    return aElement;
+}
 
-// //React
+//trying this
+ function detailsOnlode () {
+    var url = document.location.href,
+        params = url.split('?')[1].split('&'),
+        data = {}, tmp;
+    for (var i = 0, l = params.length; i < l; i++) {
+         tmp = params[i].split('=');
+         data[tmp[0]] = tmp[1];
+    }
+    var id = data.id;
 
-// import * as React from 'react';   
+  fetch('/details-data?id=' +id).then(response => response.text()).then((quote) => {
+     document.getElementById('container').innerHTML = quote;
+  });
+}
 
-// // export default class Entry extends React.Component {
-// // constructor(props) {
-// //     super(props);
-// //   this.buttonHandler = new ButtonHandler();
-// // }
-
-// // render() {
-// //     return (
-// //         <div>
-// //             <title>Button example</title>
-// //             <button onclick={this.buttonHandler.writeToConsole}>Button</button>
-// //         </div>
-
-// //     )
-// //   }
-// // }
-
-// class TypesOfFood extends React.Component {
-//   constructor(props) {
-//     super(props);
-//   }
-//   render() {
-//     return (
-//       <div>
-//         <h1>Types of Food:</h1>
-//         {/* change code below this line */}
-//         <Fruits />
-//         <Vegetables />
-//         {/* change code above this line */}
-//       </div>
-//     );
-//   }
-// };
-
-// // change code below this line
-// ReactDOM.render(<TypesOfFood />, document.getElementById('challenge-node'))
